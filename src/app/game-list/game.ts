@@ -4,4 +4,5 @@ export interface game {
     console_types: string;
     stock:number;
     image:string;
+    clearence: boolean;
 }

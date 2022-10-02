@@ -7,44 +7,21 @@
             <th>Precio</th>
             <th>Tipos de consola</th>
             <th>Stock</th>
+            <th>Cantidad</th>
         </tr>
     </thead>
     <tbody>
-        <tr>
-            <td><img [src]="game.image" [alt]="game.name" height="150"></td>
+        <tr *ngFor="let game of games" [ngClass]="{'clearence': game.clearence}">
+            <td><img [src]="game.image" [alt]="game.name" height="150" ></td>
             <td>{{game.name}}</td>
-            <td>{{game.price}}$</td>
+            <td>{{game.price | currency}}</td>
             <td>{{game.console_types}}</td>
-            <td>{{game.stock}}</td>
-            <td>
+            <td ><span *ngIf="game.stock==0" class="badge text-bg-warning">Sin Stock</span> </td>
+            <td *ngIf="game.stock!=0">
                 <div class="input-group input-group-sm mb-3">
                   <input class="form-control form-control-sm" type="number"/>
                 </div>
             </td>
-        </tr>
-        <tr>
-            <td><img [src]="" [alt]=""></td>
-            <td>Nier: Automata</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td>
-                <div class="input-group input-group-sm mb-3">
-                  <input class="form-control form-control-sm" type="number"/>
-                </div>
-            </td>
-        </tr>
-        <tr>
-            <td>Fifa 2023</td>
-            <td></td>
-            <td></td>
-            <td></td>
-        </tr>
-        <tr>
-            <td>Dragon ball z</td>
-            <td></td>
-            <td></td>
-            <td></td>
         </tr>
     </tbody>
 </table>
