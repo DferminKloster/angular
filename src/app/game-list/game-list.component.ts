@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { game } from './game';
 
 @Component({
   selector: 'app-game-list',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GameListComponent implements OnInit {
 
-  game = {
+  game : game = {
     "name":"God of war 4",
     "price": 2000,     
     "console_types": "ps4", 
