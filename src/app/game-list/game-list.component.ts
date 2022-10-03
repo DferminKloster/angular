@@ -16,6 +16,7 @@ export class GameListComponent implements OnInit {
       stock: 10,
       image: "assets/img/godofwar.jpeg",
       clearence: true,
+      quantity: 0,
     },
     {
       name:"Nier: Automata",
@@ -24,6 +25,7 @@ export class GameListComponent implements OnInit {
       stock: 50,
       image: "assets/img/NierAutomata.jpeg",
       clearence: false,
+      quantity: 0,
     },
     {
       name:"Minecraft",
@@ -32,6 +34,7 @@ export class GameListComponent implements OnInit {
       stock: 0,
       image: "assets/img/Minecraft.jpeg",
       clearence: false,
+      quantity: 0,
     },
     {
       name:"Cyberpunk 2077",
@@ -40,6 +43,7 @@ export class GameListComponent implements OnInit {
       stock: 0,
       image: "assets/img/Cyberpunk 2077.jpeg",
       clearence: false,
+      quantity: 0,
     },
   ]
 

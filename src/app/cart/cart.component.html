@@ -4,23 +4,18 @@
         <tr>
             <th>Nombre del juego</th>
             <th>Cantidad</th>
-            <th>Precio</th>
+            <th>Precio unitario</th>
         </tr>  
     </thead>
     <tbody>
-        <tr>
-            <th>God of war</th>
-            <th>2</th>
-            <th>2000</th>
-        </tr>
-        <tr>
-            <th>Nier: Automata</th>
-            <th>1</th>
-            <th>1000</th>
+        <tr *ngFor="let game of games">
+            <td>{{game.name}}</td>
+            <td>{{game.quantity}}</td>
+            <td>{{game.price | currency}}</td>
         </tr>
     </tbody>
 </table>
-<p class="text-end">Total $3000</p>
+<p class="text-end">Total {{total | currency}}</p>
 <div class="text-end">
     <button>Comprar</button>
 </div>

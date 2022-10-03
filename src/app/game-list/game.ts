@@ -5,4 +5,5 @@ export interface game {
     stock:number;
     image:string;
     clearence: boolean;
+    quantity: number;
 }
