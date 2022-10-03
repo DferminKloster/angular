@@ -7,7 +7,6 @@ import { game } from './game';
   styleUrls: ['./game-list.component.scss']
 })
 export class GameListComponent implements OnInit {
-
   games : game[] = [
     {
       name:"God of war 4",
