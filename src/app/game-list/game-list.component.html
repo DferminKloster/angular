@@ -12,15 +12,15 @@
     </thead>
     <tbody>
         <tr *ngFor="let game of games" [ngClass]="{'clearence': game.clearence}">
-            <td><img [src]="game.image" [alt]="game.name" height="150" ></td>
+            <td><img class="img-thumbnail"  [src]="game.image" [alt]="game.name" height="150" ></td>
             <td>{{game.name}}</td>
             <td>{{game.price | currency}}</td>
             <td>{{game.console_types}}</td>
             <td ><span *ngIf="game.stock==0" class="badge text-bg-warning">Sin Stock</span> </td>
             <td *ngIf="game.stock!=0">
-                <div class="input-group input-group-sm mb-3">
-                  <input class="form-control form-control-sm" type="number"/>
-                </div>
+                <button class="btn btn-light btn-sm" (click)="downQuantity(game)">-</button>
+                <input type="number" [(ngModel)]="game.quantity"  (keyup)="changeQuantity($event, game)">
+                <button class="btn btn-light btn-sm" (click)="upQuantity(game)">+</button>
             </td>
         </tr>
     </tbody>

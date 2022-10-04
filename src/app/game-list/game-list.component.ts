@@ -51,4 +51,20 @@ export class GameListComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  downQuantity(game:game): void{
+    if (game.quantity > 0) {
+      game.quantity--; 
+    }
+  }
+
+  upQuantity(game:game): void{
+    if (game.quantity < game.stock) {
+      game.quantity++; 
+    }
+  }
+
+  changeQuantity(event: { target: any; }, game:game): void{
+    console.log(event.target);
+  }
+
 }

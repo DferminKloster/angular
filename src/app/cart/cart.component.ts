@@ -17,7 +17,7 @@ export class CartComponent implements OnInit {
       stock: 10,
       image: "assets/img/godofwar.jpeg",
       clearence: true,
-      quantity: 2,
+      quantity: 4,
     },
     {
       name:"Nier: Automata",
