@@ -14,7 +14,7 @@ export class GameListComponent implements OnInit {
       console_types: "ps4", 
       stock: 10,
       image: "assets/img/godofwar.jpeg",
-      clearence: true,
+      clearence: false,
       quantity: 0,
     },
     {
@@ -23,7 +23,7 @@ export class GameListComponent implements OnInit {
       console_types: "ps4,Xbox one,Pc", 
       stock: 50,
       image: "assets/img/NierAutomata.jpeg",
-      clearence: false,
+      clearence: true,
       quantity: 0,
     },
     {
@@ -68,3 +68,12 @@ export class GameListComponent implements OnInit {
   }
 
 }
+
+
+
+
+/*verifyBeerQuantity(beer : Beer): void {
+  if(beer.stock < beer.quantity) {
+    alert("No se pueden pedir más de las cervezas que hay en stock");
+    beer.quantity = beer.stock;
+  }*/

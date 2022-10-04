@@ -8,7 +8,7 @@ import { game } from '../game-list/game';
 })
 export class CartComponent implements OnInit {
 
-  total : number = 0;
+
   games : game[] = [
     {
       name:"God of war 4",
@@ -17,7 +17,7 @@ export class CartComponent implements OnInit {
       stock: 10,
       image: "assets/img/godofwar.jpeg",
       clearence: true,
-      quantity: 4,
+      quantity: 1,
     },
     {
       name:"Nier: Automata",
@@ -32,9 +32,15 @@ export class CartComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    this.games.forEach(game => {
-      this.total += game.quantity * game.price
+    
+  }
+
+  total(){
+    let sum=0;
+    this.games.forEach(game =>{
+      sum+= game.quantity * game.price
     });
+    return sum;
   }
 
 }
