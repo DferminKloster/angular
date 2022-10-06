@@ -19,10 +19,13 @@
             <td ><span *ngIf="game.stock==0" class="badge text-bg-warning">Sin Stock</span> </td>
             <td>
                 <div class="input-group" *ngIf="game.stock!=0">
-                    <button  class="btn btn-primary btn-sm" (click)="downQuantity(game)">-</button>
+                    <button type="button" class="btn btn-primary btn-sm" (click)="downQuantity(game)">-</button>
                     <input  type="number" [(ngModel)]="game.quantity"  (keyup)="changeQuantity($event, game)">
-                    <button class="btn btn-primary btn-sm" (click)="upQuantity(game)">+</button>
+                    <button type="button" class="btn btn-primary btn-sm" (click)="upQuantity(game)">+</button>
                 </div>
+            </td>
+            <td>
+                
             </td>
         </tr>
     </tbody>
