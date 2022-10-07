@@ -12,7 +12,7 @@
     </thead>
     <tbody>
         <tr *ngFor="let game of games" [ngClass]="{'clearence': game.clearence}">
-            <td><img class="img-thumbnail"  [src]="game.image" [alt]="game.name" height="150" width="200" ></td>
+            <td><img class="img-thumbnail"  [src]="game.image" [alt]="game.name" height="150" width="150" ></td>
             <td>{{game.name}}</td>
             <td>{{game.price | currency}}</td>
             <td>{{game.console_types}}</td>
@@ -23,9 +23,6 @@
                     <input  type="number" [(ngModel)]="game.quantity"  (keyup)="changeQuantity($event, game)">
                     <button type="button" class="btn btn-primary btn-sm" (click)="upQuantity(game)">+</button>
                 </div>
-            </td>
-            <td>
-                
             </td>
         </tr>
     </tbody>
