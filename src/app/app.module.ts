@@ -8,6 +8,7 @@ import { CartComponent } from './cart/cart.component';
 import { FormsModule } from '@angular/forms';
 import { VideojuegoGamesComponent } from './videojuego-games/videojuego-games.component';
 import { VideojuegosAboutComponent } from './videojuegos-about/videojuegos-about.component';
+import { InputNumberComponent } from './input-number/input-number.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { VideojuegosAboutComponent } from './videojuegos-about/videojuegos-about
     CartComponent,
     VideojuegoGamesComponent,
     VideojuegosAboutComponent,
+    InputNumberComponent,
   ],
   imports: [
     BrowserModule,

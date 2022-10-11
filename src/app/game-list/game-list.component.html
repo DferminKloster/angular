@@ -18,11 +18,7 @@
             <td>{{game.console_types}}</td>
             <td ><span *ngIf="game.stock==0" class="badge text-bg-warning">Sin Stock</span> </td>
             <td>
-                <div class="input-group" *ngIf="game.stock!=0">
-                    <button type="button" class="btn btn-primary btn-sm" (click)="downQuantity(game)">-</button>
-                    <input  type="number" [(ngModel)]="game.quantity"  (keyup)="changeQuantity($event, game)">
-                    <button type="button" class="btn btn-primary btn-sm" (click)="upQuantity(game)">+</button>
-                </div>
+                <app-input-number [(quantity)]="game.quantity" [max]="game.stock" (limit)="limitReacher($event)" *ngIf="game.stock !=0"></app-input-number>
             </td>
         </tr>
     </tbody>
