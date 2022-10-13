@@ -7,7 +7,7 @@
             <th>Precio</th>
             <th>Tipos de consola</th>
             <th>Stock</th>
-            <th>Cantidad</th>
+            <th>Cantidad y Comprar</th>
         </tr>
     </thead>
     <tbody>
@@ -16,9 +16,12 @@
             <td>{{game.name}}</td>
             <td>{{game.price | currency}}</td>
             <td>{{game.console_types}}</td>
-            <td ><span *ngIf="game.stock==0" class="badge text-bg-warning">Sin Stock</span> </td>
+            <td>
+                <span *ngIf="game.stock==0" class="badge text-bg-warning">Sin Stock</span> 
+            </td>
             <td>
                 <app-input-number [(quantity)]="game.quantity" [max]="game.stock" (limit)="limitReacher($event)" *ngIf="game.stock !=0"></app-input-number>
+                <button class="btn btn-dark" (click)="addToCart(game)">Comprar</button>
             </td>
         </tr>
     </tbody>

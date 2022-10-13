@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { GameCartService } from '../game-cart.service';
 import { game } from './game';
 
 @Component({
@@ -44,11 +45,18 @@ export class GameListComponent implements OnInit {
       clearence: false,
       quantity: 0,
     },
-  ]
+  ];
 
-  constructor() { }
+  constructor(private cart : GameCartService) { 
+  }
 
   ngOnInit(): void {
+  }
+
+  addToCart(game: game) : void{
+    this.cart.addToCart(game);
+    game.stock -= game.quantity;
+    game.quantity = 0;
   }
 
   limitReacher(m: string){
