@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { GameCartService } from '../game-cart.service';
+import { GameDataService } from '../game-data.service';
 import { game } from './game';
 
 @Component({
@@ -8,49 +9,16 @@ import { game } from './game';
   styleUrls: ['./game-list.component.scss']
 })
 export class GameListComponent implements OnInit {
-  games : game[] = [
-    {
-      name:"God of war 4",
-      price: 2000,     
-      console_types: "ps4", 
-      stock: 10,
-      image: "assets/img/godofwar.jpeg",
-      clearence: false,
-      quantity: 0,
-    },
-    {
-      name:"Nier: Automata",
-      price: 1000,     
-      console_types: "ps4,Xbox one,Pc", 
-      stock: 50,
-      image: "assets/img/NierAutomata.jpeg",
-      clearence: true,
-      quantity: 0,
-    },
-    {
-      name:"Minecraft",
-      price: 700,     
-      console_types: "ps4,Xbox one,Pc", 
-      stock: 0,
-      image: "assets/img/Minecraft.jpeg",
-      clearence: false,
-      quantity: 0,
-    },
-    {
-      name:"Cyberpunk 2077",
-      price: 2500,     
-      console_types: "ps4,Xbox one,Pc", 
-      stock: 0,
-      image: "assets/img/Cyberpunk 2077.jpeg",
-      clearence: false,
-      quantity: 0,
-    },
-  ];
+  games : game[] = [];
 
-  constructor(private cart : GameCartService) { 
+  constructor(
+    private cart : GameCartService,
+    private gamesDataService:GameDataService) { 
   }
 
   ngOnInit(): void {
+    this.gamesDataService.getAll()
+     .subscribe(games => this.games = games);
   }
 
   addToCart(game: game) : void{

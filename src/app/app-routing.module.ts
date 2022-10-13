@@ -1,5 +1,6 @@
 import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { FormulariocartComponent } from './formulariocart/formulariocart.component';
 import { VideojuegoGamesComponent } from './videojuego-games/videojuego-games.component';
 import { VideojuegosAboutComponent } from './videojuegos-about/videojuegos-about.component';
 
@@ -16,6 +17,10 @@ const routes: Routes = [
   {
     path: 'about',
     component:VideojuegosAboutComponent
+  },
+  {
+    path: 'forms',
+    component:FormulariocartComponent
   },
 ];
 

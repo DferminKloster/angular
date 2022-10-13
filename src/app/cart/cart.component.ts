@@ -9,6 +9,7 @@ import { game } from '../game-list/game';
   styleUrls: ['./cart.component.scss']
 })
 export class CartComponent implements OnInit {
+  games: game [] = [];
 
   cartlist$: Observable<game[]>;
   constructor(private cart : GameCartService) { 
@@ -16,9 +17,16 @@ export class CartComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    
   }
 
+
+  total(){
+    let sum=0;
+    this.games.forEach(game => {
+      sum += game.quantity * game.price
+    });
+    return sum;
+  }
 
 
 }

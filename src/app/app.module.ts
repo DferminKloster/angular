@@ -10,6 +10,9 @@ import { VideojuegoGamesComponent } from './videojuego-games/videojuego-games.co
 import { VideojuegosAboutComponent } from './videojuegos-about/videojuegos-about.component';
 import { InputNumberComponent } from './input-number/input-number.component';
 
+import {HttpClientModule} from '@angular/common/http'
+import { FormulariocartComponent } from './formulariocart/formulariocart.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,11 +21,13 @@ import { InputNumberComponent } from './input-number/input-number.component';
     VideojuegoGamesComponent,
     VideojuegosAboutComponent,
     InputNumberComponent,
+    FormulariocartComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

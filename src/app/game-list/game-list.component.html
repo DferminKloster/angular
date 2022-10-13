@@ -17,7 +17,7 @@
             <td>{{game.price | currency}}</td>
             <td>{{game.console_types}}</td>
             <td>
-                <span *ngIf="game.stock==0" class="badge text-bg-warning">Sin Stock</span> 
+                <span *ngIf="game.stock==0" class="badge text-bg-danger">Sin Stock</span> 
             </td>
             <td>
                 <app-input-number [(quantity)]="game.quantity" [max]="game.stock" (limit)="limitReacher($event)" *ngIf="game.stock !=0"></app-input-number>
