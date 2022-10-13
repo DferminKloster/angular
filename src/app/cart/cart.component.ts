@@ -20,13 +20,5 @@ export class CartComponent implements OnInit {
   }
 
 
-  total(){
-    let sum=0;
-    this.games.forEach(game => {
-      sum += game.quantity * game.price
-    });
-    return sum;
-  }
-
 
 }
